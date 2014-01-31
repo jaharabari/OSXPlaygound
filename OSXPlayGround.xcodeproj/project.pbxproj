@@ -22,6 +22,14 @@
 		7593AA73189BED7B00E7C016 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7593AA6F189BED7B00E7C016 /* MasterViewController.xib */; };
 		7593AA74189BED7B00E7C016 /* ScaryBugData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7593AA71189BED7B00E7C016 /* ScaryBugData.m */; };
 		7593AA77189BF55600E7C016 /* ScaryBugDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7593AA76189BF55600E7C016 /* ScaryBugDoc.m */; };
+		7593AA82189BF69800E7C016 /* centipede.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7593AA7A189BF69800E7C016 /* centipede.jpg */; };
+		7593AA83189BF69800E7C016 /* centipedeThumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7593AA7B189BF69800E7C016 /* centipedeThumb.jpg */; };
+		7593AA84189BF69800E7C016 /* ladybug.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7593AA7C189BF69800E7C016 /* ladybug.jpg */; };
+		7593AA85189BF69800E7C016 /* ladybugThumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7593AA7D189BF69800E7C016 /* ladybugThumb.jpg */; };
+		7593AA86189BF69800E7C016 /* potatoBug.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7593AA7E189BF69800E7C016 /* potatoBug.jpg */; };
+		7593AA87189BF69800E7C016 /* potatoBugThumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7593AA7F189BF69800E7C016 /* potatoBugThumb.jpg */; };
+		7593AA88189BF69800E7C016 /* wolfSpider.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7593AA80189BF69800E7C016 /* wolfSpider.jpg */; };
+		7593AA89189BF69800E7C016 /* wolfSpiderThumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7593AA81189BF69800E7C016 /* wolfSpiderThumb.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +69,14 @@
 		7593AA71189BED7B00E7C016 /* ScaryBugData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScaryBugData.m; path = Classes/ScaryBug/ScaryBugData.m; sourceTree = "<group>"; };
 		7593AA75189BF55600E7C016 /* ScaryBugDoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScaryBugDoc.h; path = Classes/ScaryBug/ScaryBugDoc.h; sourceTree = "<group>"; };
 		7593AA76189BF55600E7C016 /* ScaryBugDoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScaryBugDoc.m; path = Classes/ScaryBug/ScaryBugDoc.m; sourceTree = "<group>"; };
+		7593AA7A189BF69800E7C016 /* centipede.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = centipede.jpg; path = Resources/ScaryBugImages/centipede.jpg; sourceTree = "<group>"; };
+		7593AA7B189BF69800E7C016 /* centipedeThumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = centipedeThumb.jpg; path = Resources/ScaryBugImages/centipedeThumb.jpg; sourceTree = "<group>"; };
+		7593AA7C189BF69800E7C016 /* ladybug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ladybug.jpg; path = Resources/ScaryBugImages/ladybug.jpg; sourceTree = "<group>"; };
+		7593AA7D189BF69800E7C016 /* ladybugThumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ladybugThumb.jpg; path = Resources/ScaryBugImages/ladybugThumb.jpg; sourceTree = "<group>"; };
+		7593AA7E189BF69800E7C016 /* potatoBug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = potatoBug.jpg; path = Resources/ScaryBugImages/potatoBug.jpg; sourceTree = "<group>"; };
+		7593AA7F189BF69800E7C016 /* potatoBugThumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = potatoBugThumb.jpg; path = Resources/ScaryBugImages/potatoBugThumb.jpg; sourceTree = "<group>"; };
+		7593AA80189BF69800E7C016 /* wolfSpider.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wolfSpider.jpg; path = Resources/ScaryBugImages/wolfSpider.jpg; sourceTree = "<group>"; };
+		7593AA81189BF69800E7C016 /* wolfSpiderThumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wolfSpiderThumb.jpg; path = Resources/ScaryBugImages/wolfSpiderThumb.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				7593AA69189BEB8D00E7C016 /* ScaryBug */,
+				7593AA78189BF65700E7C016 /* Resources */,
 				7593AA2A189AA09400E7C016 /* AppDelegate.h */,
 				7593AA2B189AA09400E7C016 /* AppDelegate.m */,
 				7593AA2D189AA09400E7C016 /* MainMenu.xib */,
@@ -178,6 +195,29 @@
 				7593AA76189BF55600E7C016 /* ScaryBugDoc.m */,
 			);
 			name = ScaryBug;
+			sourceTree = "<group>";
+		};
+		7593AA78189BF65700E7C016 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7593AA79189BF65E00E7C016 /* ScaryBugImages */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7593AA79189BF65E00E7C016 /* ScaryBugImages */ = {
+			isa = PBXGroup;
+			children = (
+				7593AA7A189BF69800E7C016 /* centipede.jpg */,
+				7593AA7B189BF69800E7C016 /* centipedeThumb.jpg */,
+				7593AA7C189BF69800E7C016 /* ladybug.jpg */,
+				7593AA7D189BF69800E7C016 /* ladybugThumb.jpg */,
+				7593AA7E189BF69800E7C016 /* potatoBug.jpg */,
+				7593AA7F189BF69800E7C016 /* potatoBugThumb.jpg */,
+				7593AA80189BF69800E7C016 /* wolfSpider.jpg */,
+				7593AA81189BF69800E7C016 /* wolfSpiderThumb.jpg */,
+			);
+			name = ScaryBugImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,9 +296,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7593AA88189BF69800E7C016 /* wolfSpider.jpg in Resources */,
 				7593AA73189BED7B00E7C016 /* MasterViewController.xib in Resources */,
 				7593AA23189AA09400E7C016 /* InfoPlist.strings in Resources */,
+				7593AA84189BF69800E7C016 /* ladybug.jpg in Resources */,
+				7593AA86189BF69800E7C016 /* potatoBug.jpg in Resources */,
 				7593AA31189AA09400E7C016 /* Images.xcassets in Resources */,
+				7593AA89189BF69800E7C016 /* wolfSpiderThumb.jpg in Resources */,
+				7593AA82189BF69800E7C016 /* centipede.jpg in Resources */,
+				7593AA87189BF69800E7C016 /* potatoBugThumb.jpg in Resources */,
+				7593AA83189BF69800E7C016 /* centipedeThumb.jpg in Resources */,
+				7593AA85189BF69800E7C016 /* ladybugThumb.jpg in Resources */,
 				7593AA29189AA09400E7C016 /* Credits.rtf in Resources */,
 				7593AA2F189AA09400E7C016 /* MainMenu.xib in Resources */,
 			);
