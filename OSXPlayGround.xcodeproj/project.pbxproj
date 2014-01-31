@@ -18,6 +18,10 @@
 		7593AA39189AA09400E7C016 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7593AA18189AA09400E7C016 /* Cocoa.framework */; };
 		7593AA41189AA09400E7C016 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7593AA3F189AA09400E7C016 /* InfoPlist.strings */; };
 		7593AA43189AA09400E7C016 /* OSXPlayGroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7593AA42189AA09400E7C016 /* OSXPlayGroundTests.m */; };
+		7593AA72189BED7B00E7C016 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7593AA6E189BED7B00E7C016 /* MasterViewController.m */; };
+		7593AA73189BED7B00E7C016 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7593AA6F189BED7B00E7C016 /* MasterViewController.xib */; };
+		7593AA74189BED7B00E7C016 /* ScaryBugData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7593AA71189BED7B00E7C016 /* ScaryBugData.m */; };
+		7593AA77189BF55600E7C016 /* ScaryBugDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 7593AA76189BF55600E7C016 /* ScaryBugDoc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,13 @@
 		7593AA3E189AA09400E7C016 /* OSXPlayGroundTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OSXPlayGroundTests-Info.plist"; sourceTree = "<group>"; };
 		7593AA40189AA09400E7C016 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7593AA42189AA09400E7C016 /* OSXPlayGroundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSXPlayGroundTests.m; sourceTree = "<group>"; };
+		7593AA6D189BED7B00E7C016 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterViewController.h; path = Classes/ScaryBug/MasterViewController.h; sourceTree = "<group>"; };
+		7593AA6E189BED7B00E7C016 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MasterViewController.m; path = Classes/ScaryBug/MasterViewController.m; sourceTree = "<group>"; };
+		7593AA6F189BED7B00E7C016 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MasterViewController.xib; path = Classes/ScaryBug/MasterViewController.xib; sourceTree = "<group>"; };
+		7593AA70189BED7B00E7C016 /* ScaryBugData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScaryBugData.h; path = Classes/ScaryBug/ScaryBugData.h; sourceTree = "<group>"; };
+		7593AA71189BED7B00E7C016 /* ScaryBugData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScaryBugData.m; path = Classes/ScaryBug/ScaryBugData.m; sourceTree = "<group>"; };
+		7593AA75189BF55600E7C016 /* ScaryBugDoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScaryBugDoc.h; path = Classes/ScaryBug/ScaryBugDoc.h; sourceTree = "<group>"; };
+		7593AA76189BF55600E7C016 /* ScaryBugDoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScaryBugDoc.m; path = Classes/ScaryBug/ScaryBugDoc.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +126,7 @@
 		7593AA1E189AA09400E7C016 /* OSXPlayGround */ = {
 			isa = PBXGroup;
 			children = (
+				7593AA69189BEB8D00E7C016 /* ScaryBug */,
 				7593AA2A189AA09400E7C016 /* AppDelegate.h */,
 				7593AA2B189AA09400E7C016 /* AppDelegate.m */,
 				7593AA2D189AA09400E7C016 /* MainMenu.xib */,
@@ -152,6 +164,20 @@
 				7593AA3F189AA09400E7C016 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7593AA69189BEB8D00E7C016 /* ScaryBug */ = {
+			isa = PBXGroup;
+			children = (
+				7593AA6D189BED7B00E7C016 /* MasterViewController.h */,
+				7593AA6E189BED7B00E7C016 /* MasterViewController.m */,
+				7593AA6F189BED7B00E7C016 /* MasterViewController.xib */,
+				7593AA70189BED7B00E7C016 /* ScaryBugData.h */,
+				7593AA71189BED7B00E7C016 /* ScaryBugData.m */,
+				7593AA75189BF55600E7C016 /* ScaryBugDoc.h */,
+				7593AA76189BF55600E7C016 /* ScaryBugDoc.m */,
+			);
+			name = ScaryBug;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7593AA73189BED7B00E7C016 /* MasterViewController.xib in Resources */,
 				7593AA23189AA09400E7C016 /* InfoPlist.strings in Resources */,
 				7593AA31189AA09400E7C016 /* Images.xcassets in Resources */,
 				7593AA29189AA09400E7C016 /* Credits.rtf in Resources */,
@@ -252,8 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7593AA77189BF55600E7C016 /* ScaryBugDoc.m in Sources */,
 				7593AA2C189AA09400E7C016 /* AppDelegate.m in Sources */,
+				7593AA72189BED7B00E7C016 /* MasterViewController.m in Sources */,
 				7593AA25189AA09400E7C016 /* main.m in Sources */,
+				7593AA74189BED7B00E7C016 /* ScaryBugData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +494,7 @@
 				7593AA48189AA09400E7C016 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7593AA49189AA09400E7C016 /* Build configuration list for PBXNativeTarget "OSXPlayGroundTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +503,7 @@
 				7593AA4B189AA09400E7C016 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
