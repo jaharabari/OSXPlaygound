@@ -7,6 +7,10 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MasterViewController">
             <connections>
+                <outlet property="bugImageView" destination="MYl-2T-20W" id="n0m-eh-plk"/>
+                <outlet property="bugRating" destination="1fY-hn-ckc" id="fy1-Dd-8P9"/>
+                <outlet property="bugTableView" destination="Gvc-qX-L8Y" id="oRl-TT-TH3"/>
+                <outlet property="bugTitleView" destination="vta-xD-PFA" id="grQ-hC-OGD"/>
                 <outlet property="view" destination="1" id="2"/>
             </connections>
         </customObject>
