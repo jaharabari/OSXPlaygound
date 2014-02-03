@@ -87,7 +87,7 @@ typedef NSUInteger EDStarRatingDisplayMode;
 @property (nonatomic, assign) EDStarRatingDisplayMode displayMode;
 @property (nonatomic, assign) float halfStarThreshold;
 
-@property (nonatomic, weak) id<EDStarRatingProtocol> delegate;
+@property (nonatomic, weak) IBOutlet id<EDStarRatingProtocol> delegate;
 @end
 
 

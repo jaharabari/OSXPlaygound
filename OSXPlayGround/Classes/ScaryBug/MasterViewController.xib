@@ -21,14 +21,14 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView autohidesScrollers="YES" horizontalLineScroll="46" horizontalPageScroll="10" verticalLineScroll="46" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbU-6q-gxU">
-                    <rect key="frame" x="20" y="13" width="324" height="374"/>
+                    <rect key="frame" x="20" y="42" width="324" height="345"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <clipView key="contentView" id="GSd-D2-shL">
-                        <rect key="frame" x="1" y="1" width="322" height="372"/>
+                        <rect key="frame" x="1" y="1" width="322" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="44" rowSizeStyle="automatic" viewBased="YES" id="Gvc-qX-L8Y">
-                                <rect key="frame" x="0.0" y="0.0" width="322" height="372"/>
+                                <rect key="frame" x="0.0" y="0.0" width="322" height="343"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -116,40 +116,90 @@
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <connections>
+                            <action selector="bugTitleDidEndEditing:" target="-2" id="YkR-zW-BEo"/>
+                        </connections>
                     </textFieldCell>
                 </textField>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="1fY-hn-ckc" customClass="EDStarRating">
                     <rect key="frame" x="398" y="260" width="286" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="1" id="y4C-yk-OWD"/>
+                    </connections>
                 </customView>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MYl-2T-20W">
-                    <rect key="frame" x="395" y="17" width="292" height="193"/>
+                    <rect key="frame" x="395" y="39" width="292" height="171"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="Bvz-bh-t2T"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" imageFrameStyle="grayBezel" id="Bvz-bh-t2T"/>
                 </imageView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vgJ-m2-B5H">
+                    <rect key="frame" x="318" y="12" width="26" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MSy-lR-tio">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="removeButtonPressed:" target="-2" id="76d-Y4-2p0"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pZt-wa-GNv">
+                    <rect key="frame" x="284" y="12" width="26" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Pf9-rh-Pdj">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="addButtonPressed:" target="-2" id="Sf1-Ob-jqx"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LH0-hC-fRk">
+                    <rect key="frame" x="398" y="12" width="286" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="smallSquare" title="Change Picture" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="V5R-wL-biA">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="changePicture:" target="-2" id="Xh4-gb-aC1"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="1fY-hn-ckc" secondAttribute="bottom" constant="260" id="0N2-1J-SSd"/>
-                <constraint firstAttribute="bottom" secondItem="SbU-6q-gxU" secondAttribute="bottom" constant="13" id="0lV-3Z-GNA"/>
+                <constraint firstAttribute="bottom" secondItem="SbU-6q-gxU" secondAttribute="bottom" constant="42" id="0lV-3Z-GNA"/>
+                <constraint firstItem="vgJ-m2-B5H" firstAttribute="top" secondItem="SbU-6q-gxU" secondAttribute="bottom" constant="8" id="2a8-fd-cNi"/>
                 <constraint firstItem="MYl-2T-20W" firstAttribute="width" secondItem="wbD-aV-Rm5" secondAttribute="width" id="80I-YQ-sCc"/>
+                <constraint firstItem="LH0-hC-fRk" firstAttribute="leading" secondItem="MYl-2T-20W" secondAttribute="leading" id="9H4-e0-CeT"/>
+                <constraint firstItem="pZt-wa-GNv" firstAttribute="width" secondItem="vgJ-m2-B5H" secondAttribute="width" id="9OF-hO-8fr"/>
+                <constraint firstAttribute="bottom" secondItem="vgJ-m2-B5H" secondAttribute="bottom" constant="13" id="9w6-Rs-X3j"/>
                 <constraint firstItem="vta-xD-PFA" firstAttribute="leading" secondItem="wbD-aV-Rm5" secondAttribute="leading" id="C2W-ep-ZMq"/>
                 <constraint firstItem="Vac-ad-vB3" firstAttribute="width" secondItem="wbD-aV-Rm5" secondAttribute="width" id="DFD-Nv-oJN"/>
+                <constraint firstItem="LH0-hC-fRk" firstAttribute="top" secondItem="MYl-2T-20W" secondAttribute="bottom" constant="8" id="Dc0-Yr-lYe"/>
                 <constraint firstItem="SbU-6q-gxU" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="EOA-vN-3J5"/>
                 <constraint firstItem="1fY-hn-ckc" firstAttribute="top" secondItem="Vac-ad-vB3" secondAttribute="bottom" constant="8" id="Gd9-rn-Lz8"/>
+                <constraint firstItem="pZt-wa-GNv" firstAttribute="height" secondItem="vgJ-m2-B5H" secondAttribute="height" id="Gw2-uD-ixd"/>
                 <constraint firstItem="Vac-ad-vB3" firstAttribute="top" secondItem="vta-xD-PFA" secondAttribute="bottom" constant="15" id="MIb-5T-oNj"/>
                 <constraint firstItem="vta-xD-PFA" firstAttribute="top" secondItem="wbD-aV-Rm5" secondAttribute="bottom" constant="8" id="OXv-BB-o46"/>
                 <constraint firstAttribute="trailing" secondItem="wbD-aV-Rm5" secondAttribute="trailing" constant="35" id="OfP-w0-AIW"/>
                 <constraint firstAttribute="trailing" secondItem="SbU-6q-gxU" secondAttribute="trailing" constant="375" id="OvQ-Fn-n7R"/>
+                <constraint firstItem="LH0-hC-fRk" firstAttribute="trailing" secondItem="MYl-2T-20W" secondAttribute="trailing" id="P4t-7b-pdW"/>
+                <constraint firstItem="SbU-6q-gxU" firstAttribute="trailing" secondItem="vgJ-m2-B5H" secondAttribute="trailing" id="URf-DR-Dl6"/>
                 <constraint firstItem="MYl-2T-20W" firstAttribute="leading" secondItem="wbD-aV-Rm5" secondAttribute="leading" id="VwD-6w-z9U"/>
                 <constraint firstItem="1fY-hn-ckc" firstAttribute="width" secondItem="wbD-aV-Rm5" secondAttribute="width" id="WsN-7G-buK"/>
                 <constraint firstItem="1fY-hn-ckc" firstAttribute="leading" secondItem="wbD-aV-Rm5" secondAttribute="leading" id="Xwo-TG-d0T"/>
                 <constraint firstItem="SbU-6q-gxU" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="Y95-ks-KFw"/>
                 <constraint firstItem="Vac-ad-vB3" firstAttribute="leading" secondItem="wbD-aV-Rm5" secondAttribute="leading" id="awE-jl-EU8"/>
                 <constraint firstItem="wbD-aV-Rm5" firstAttribute="leading" secondItem="SbU-6q-gxU" secondAttribute="trailing" constant="54" id="duF-fX-ESa"/>
-                <constraint firstAttribute="bottom" secondItem="MYl-2T-20W" secondAttribute="bottom" constant="20" id="fw0-hT-GVy"/>
+                <constraint firstItem="vgJ-m2-B5H" firstAttribute="leading" secondItem="pZt-wa-GNv" secondAttribute="trailing" constant="8" id="e8L-sS-MnM"/>
+                <constraint firstItem="pZt-wa-GNv" firstAttribute="baseline" secondItem="vgJ-m2-B5H" secondAttribute="baseline" id="m8A-Y0-7m5"/>
                 <constraint firstItem="MYl-2T-20W" firstAttribute="top" secondItem="1fY-hn-ckc" secondAttribute="bottom" constant="53" id="nQ2-TH-7PI"/>
                 <constraint firstItem="wbD-aV-Rm5" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="pnt-df-n61"/>
+                <constraint firstItem="SbU-6q-gxU" firstAttribute="bottom" secondItem="MYl-2T-20W" secondAttribute="bottom" id="ros-eV-hdb"/>
                 <constraint firstItem="vta-xD-PFA" firstAttribute="width" secondItem="wbD-aV-Rm5" secondAttribute="width" id="z5j-eR-f2R"/>
+                <constraint firstItem="vgJ-m2-B5H" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="318" id="zzO-Rj-hwq"/>
             </constraints>
         </customView>
         <tableCellView id="sB7-k2-Dy1">
@@ -176,8 +226,15 @@
                 <outlet property="textField" destination="KID-ry-65o" id="zMk-jU-7DT"/>
             </connections>
         </tableCellView>
+        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="BID-k5-lVA">
+            <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="oVH-DF-yk5"/>
+        </imageView>
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSAddTemplate" width="8" height="8"/>
+        <image name="NSRemoveTemplate" width="8" height="8"/>
     </resources>
 </document>

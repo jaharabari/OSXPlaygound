@@ -9,7 +9,8 @@
 #import "MasterViewController.h"
 #import "ScaryBugDoc.h"
 #import "ScaryBugData.h"
-#import "EDStarRating.h"
+#import <Quartz/Quartz.h>
+#import "NSImage+Extras.h"
 
 @interface MasterViewController () {
     __weak NSTableView *_bugTableView;
@@ -27,6 +28,8 @@
 @end
 
 @implementation MasterViewController
+
+#pragma mark - VC Method(s)
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -49,11 +52,14 @@
     _bugRating.maxRating = 5.0;
     _bugRating.delegate = (id<EDStarRatingProtocol>) self;
     _bugRating.horizontalMargin = 12;
-    _bugRating.editable=YES;
-    _bugRating.displayMode=EDStarRatingDisplayFull;
+    _bugRating.editable = YES;
+    _bugRating.displayMode = EDStarRatingDisplayFull;
     
     self.bugRating.rating= 0.0;
 }
+
+#pragma mark - TableView DataSource And Delegate Method(s)
+
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     
     NSTableCellView *cellView = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
@@ -74,6 +80,52 @@
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     return [self.bugs count];
 }
+
+#pragma mark - Button Action(s)
+
+- (IBAction)removeButtonPressed:(id)sender {
+    ScaryBugDoc *selectedDoc = [self selectedBugDoc];
+    if (selectedDoc) {
+        [self.bugs removeObject:selectedDoc];
+
+        [_bugTableView removeRowsAtIndexes:[NSIndexSet indexSetWithIndex:_bugTableView.selectedRow] withAnimation:NSTableViewAnimationSlideRight];
+
+        [self setDetailInfo:nil];
+    }
+}
+
+- (IBAction)addButtonPressed:(id)sender {
+    ScaryBugDoc *newDoc = [[ScaryBugDoc alloc] initWithTitle:@"New Bug" rating:0.0 thumbImage:nil fullImage:nil];
+    
+    [self.bugs addObject:newDoc];
+    NSInteger newRowIndex = self.bugs.count-1;
+    
+    [_bugTableView insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:newRowIndex] withAnimation:NSTableViewAnimationEffectGap];
+    
+    [_bugTableView selectRowIndexes:[NSIndexSet indexSetWithIndex:newRowIndex] byExtendingSelection:NO];
+    [_bugTableView scrollRowToVisible:newRowIndex];
+}
+
+- (IBAction)bugTitleDidEndEditing:(id)sender {
+    ScaryBugDoc *selectedDoc = [self selectedBugDoc];
+    if (selectedDoc) {
+        // 2. Get the new name from the text field
+        selectedDoc.data.title = [self.bugTitleView stringValue];
+        // 3. Update the cell
+        NSIndexSet * indexSet = [NSIndexSet indexSetWithIndex:[self.bugs indexOfObject:selectedDoc]];
+        NSIndexSet * columnSet = [NSIndexSet indexSetWithIndex:0];
+        [_bugTableView reloadDataForRowIndexes:indexSet columnIndexes:columnSet];
+    }
+}
+
+- (IBAction)changePicture:(id)sender {
+    ScaryBugDoc *selectedDoc = [self selectedBugDoc];
+    if(selectedDoc) {
+        [[IKPictureTaker pictureTaker] beginPictureTakerSheetForWindow:self.view.window withDelegate:self didEndSelector:@selector(pictureTakerDidEnd:returnCode:contextInfo:) contextInfo:nil];
+    }
+}
+
+#pragma mark - Instance Method(s)
 
 -(ScaryBugDoc*)selectedBugDoc {
     NSInteger selectedRow = [_bugTableView selectedRow];
@@ -106,4 +158,36 @@
     // Update info
     [self setDetailInfo:selectedDoc];
 }
+
+#pragma mark - Rating Delegate method(s)
+
+-(void)starsSelectionChanged:(EDStarRating*)control rating:(float)rating {
+    ScaryBugDoc *selectedDoc = [self selectedBugDoc];
+    if( selectedDoc) {
+        selectedDoc.data.rating = self.bugRating.rating;
+    }
+}
+
+#pragma mark - PictureTaker Delegate
+
+- (void) pictureTakerDidEnd:(IKPictureTaker *) picker
+                 returnCode:(NSInteger) code
+                contextInfo:(void*) contextInfo
+{
+    NSImage *image = [picker outputImage];
+    if(image !=nil && (code == NSOKButton)) {
+        [self.bugImageView setImage:image];
+        ScaryBugDoc * selectedBugDoc = [self selectedBugDoc];
+        if( selectedBugDoc )
+        {
+            selectedBugDoc.fullImage = image;
+            selectedBugDoc.thumbImage = [image imageByScalingAndCroppingForSize:CGSizeMake( 44, 44 )];
+            NSIndexSet * indexSet = [NSIndexSet indexSetWithIndex:[self.bugs indexOfObject:selectedBugDoc]];
+            
+            NSIndexSet * columnSet = [NSIndexSet indexSetWithIndex:0];
+            [_bugTableView reloadDataForRowIndexes:indexSet columnIndexes:columnSet];
+        }
+    }
+}
+
 @end

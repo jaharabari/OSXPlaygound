@@ -7,7 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "EDStarRating.h"
 
-@interface MasterViewController : NSViewController
+@interface MasterViewController : NSViewController <EDStarRatingProtocol>
 
 @end
