@@ -18,8 +18,6 @@
 
 @implementation MasterViewController
 
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -34,7 +32,6 @@
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     
-    // Get a new ViewCell
     NSTableCellView *cellView = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     
     // Since this is a single-column table view, this would not be necessary.
@@ -53,4 +50,5 @@
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     return [self.bugs count];
 }
+
 @end

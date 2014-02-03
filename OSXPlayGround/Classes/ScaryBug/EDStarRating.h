@@ -22,6 +22,7 @@
 //  https://gist.github.com/1563325
 //
 
+/*
 #ifndef AH_RETAIN
 #if __has_feature(objc_arc)
 #define AH_RETAIN(x) (x)
@@ -59,7 +60,7 @@
 #endif
 #endif
 #endif
-
+*/
 //  ARC Helper ends
 
 #import <Cocoa/Cocoa.h>
@@ -75,18 +76,18 @@ typedef NSUInteger EDStarRatingDisplayMode;
 
 @interface EDStarRating : NSControl
 
-@property (nonatomic,strong) NSColor *backgrounColor;
-@property (nonatomic,strong) NSImage *backgroundImage;
-@property (nonatomic,strong) NSImage *starHighlightedImage;
-@property (nonatomic,strong) NSImage *starImage;
-@property (nonatomic) NSInteger maxRating;
-@property (nonatomic) float rating;
-@property (nonatomic) CGFloat horizontalMargin;
-@property (nonatomic) BOOL editable;
-@property (nonatomic) EDStarRatingDisplayMode displayMode;
-@property (nonatomic) float halfStarThreshold;
+@property (nonatomic, strong) NSColor *backgrounColor;
+@property (nonatomic, strong) NSImage *backgroundImage;
+@property (nonatomic, strong) NSImage *starHighlightedImage;
+@property (nonatomic, strong) NSImage *starImage;
+@property (nonatomic, assign) NSInteger maxRating;
+@property (nonatomic, assign) float rating;
+@property (nonatomic, assign) CGFloat horizontalMargin;
+@property (nonatomic, assign) BOOL editable;
+@property (nonatomic, assign) EDStarRatingDisplayMode displayMode;
+@property (nonatomic, assign) float halfStarThreshold;
 
-@property (nonatomic,unsafe_unretained) id<EDStarRatingProtocol> delegate;
+@property (nonatomic, weak) id<EDStarRatingProtocol> delegate;
 @end
 
 

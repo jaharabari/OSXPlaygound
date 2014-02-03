@@ -40,16 +40,6 @@
     return self;
 }
 
-
-
--(void)dealloc
-{
-    AH_RELEASE(starImage);
-    AH_RELEASE(starHighlightedImage);
-    AH_RELEASE(backGrounColor);
-    AH_RELEASE(backGroundImage);
-    
-}
 #pragma mark -
 #pragma mark Setters
 -(void)setRating:(float)ratingParam
