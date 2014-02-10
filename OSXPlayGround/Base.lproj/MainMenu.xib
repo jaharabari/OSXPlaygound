@@ -648,11 +648,12 @@
         </menu>
         <window title="OSXPlayGround" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="719" height="407"/>
+            <rect key="contentRect" x="335" y="390" width="782" height="504"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <view key="contentView" id="372">
-                <rect key="frame" x="0.0" y="0.0" width="719" height="407"/>
+                <rect key="frame" x="0.0" y="0.0" width="782" height="504"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
         </window>

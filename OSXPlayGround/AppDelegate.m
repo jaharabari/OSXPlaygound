@@ -24,4 +24,8 @@
     self.masterViewController.view.frame = ((NSView*)self.window.contentView).bounds;
 }
 
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
+    return YES;
+}
+
 @end
